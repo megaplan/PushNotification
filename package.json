@@ -1,6 +1,6 @@
 {
   "name": "megaplan-plugin-push",
-  "version": "2.5.7",
+  "version": "2.5.8",
   "cordova": {
     "id": "megaplan-plugin-push",
     "platforms": [

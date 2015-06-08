@@ -1,0 +1,20 @@
+{
+  "name": "megaplan-plugin-push",
+  "version": "2.5.7",
+  "cordova": {
+    "id": "megaplan-plugin-push",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/megaplan/PushNotification"
+  },
+  "keywords": [
+    "telerik",
+    "push",
+    "ecosystem:cordova"
+  ]
+}

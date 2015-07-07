@@ -25,16 +25,16 @@
 	</js-module>
 
 	<engines>
-		<engine name="cordova" version=">=3.0.0"/>
+		<engine name="cordova" version=">=5.0.0"/>
 	</engines>
 
-	<dependency id="org.apache.cordova.device"/>
-	<dependency id="org.apache.cordova.globalization"/>
+	<dependency id="cordova-plugin-device"/>
+	<dependency id="cordova-plugin-globalization"/>
 
 	<!-- android -->
 	<platform name="android">
 
-		<dependency id="com.google.playservices" />
+		<dependency id="cordova-plugin-googleplayservices" />
 
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="PushPlugin">

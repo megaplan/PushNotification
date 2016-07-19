@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
 				xmlns:android="http://schemas.android.com/apk/res/android"
 				id="com.megaplan.plugins.PushPlugin"
-				version="2.5.7">
+				version="2.5.11">
 
 	<name>PushPlugin</name>
 
@@ -26,6 +26,7 @@
 
 	<engines>
 		<engine name="cordova" version=">=3.0.0"/>
+		<engine name="cordova-android" version=">=3.6.0"/>
 	</engines>
 
 	<dependency id="cordova-plugin-device"/>
@@ -33,8 +34,6 @@
 
 	<!-- android -->
 	<platform name="android">
-
-		<dependency id="cordova-plugin-googleplayservices" />
 
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="PushPlugin">
@@ -67,8 +66,11 @@
 		<source-file src="src/android/com/plugin/gcm/CordovaGCMBroadcastReceiver.java" target-dir="src/com/plugin/gcm/"/>
 		<source-file src="src/android/com/plugin/gcm/PushHandlerActivity.java" target-dir="src/com/plugin/gcm/"/>
 		<source-file src="src/android/com/plugin/gcm/PushPlugin.java" target-dir="src/com/plugin/gcm/"/>
-		<source-file src="src/android/com/plugin/android-support-v4.jar" target-dir="libs/"/>
-
+		<framework src="com.android.support:support-v4:+" />
+		<framework src="com.google.android.gms:play-services-gcm:+" />
+		<framework src="src/android/fix-playservices-applicationid-CB-10014.gradle" custom="true" type="gradleReference" />
+		<!-- this should not be in this plugin, perhaps in a special-purpose one -->
+		<!--framework src="src/android/shrinkresources.gradle" custom="true" type="gradleReference" /-->
 	</platform>
 
 	<!-- ios -->

@@ -72,7 +72,7 @@ public class CordovaGCMBroadcastReceiver extends WakefulBroadcastReceiver {
 		int notId = 0;
 
 		try {
-			notId = Integer.parseInt(extras.getString("notId", "0"));
+			notId = Integer.parseInt(extras.getString("notId"));
 		} catch (NumberFormatException e) {
 			Log.e(TAG, "Number format exception - Error parsing Notification ID: " + e.getMessage());
 		} catch (Exception e) {
@@ -94,7 +94,7 @@ public class CordovaGCMBroadcastReceiver extends WakefulBroadcastReceiver {
 		notificationIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		notificationIntent.putExtra("pushBundle", extras);
 
-		PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+    PendingIntent contentIntent = PendingIntent.getActivity(context, notId, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
 		int defaults = Notification.DEFAULT_ALL;
 
